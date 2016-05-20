@@ -63,7 +63,7 @@ google_ad_slot           :
 author:
   name             : "Juan Manuel Contreras, PhD"
   avatar           : "bio-photo.jpg"
-  bio              : "Data scientist. Behavioral scientist. Princetonian-Harvardian. Bolivian-American. Retired bassist."
+  bio              : "Data scientist.\nBehavioral scientist.\nPrincetonian-Harvardian.\nBolivian-American.\nRetired bassist."
   location         : "Washington, DC"
   email            : jm.contreras.phd@gmail.com
   uri              :
@@ -73,18 +73,18 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : https://github.com/jm-contreras
+  github           : jm-contreras
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : https://www.linkedin.com/in/jmcontreras
+  linkedin         : jmcontreras
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : https://twitter.com/JMContrerasPhD
+  twitter          : JMContrerasPhD
   vine             :
   weibo            :
   xing             :
