@@ -9,8 +9,8 @@
 locale                   : "en-US"
 title                    : "Juan Manuel Contreras, PhD"
 title_separator          : "-"
-name                     : "Juan Manuel Contreras, PhD"
-description              : "An amazing website."
+name                     : "Juan Manuel Contreras"
+description              : "A personal website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
@@ -47,12 +47,14 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://www.linkedin.com/in/jmcontreras"
+    - "https://www.twitter.com/JMContrerasPhD"
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google-universal" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : "UA-78063206-1"
 
 # Google AdSense
 google_ad_client         :
