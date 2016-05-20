@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Juan Manuel Contreras, PhD"
 title_separator          : "-"
 name                     : "Juan Manuel Contreras, PhD"
-description              : "Data scientist. Behavioral scientist. Princetonian-Harvardian. Bolivian-American. Retired bassist."
+description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
@@ -61,11 +61,11 @@ google_ad_slot           :
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Juan Manuel Contreras, PhD"
   avatar           : "bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  bio              : "Data scientist. Behavioral scientist. Princetonian-Harvardian. Bolivian-American. Retired bassist."
+  location         : "Washington, DC"
+  email            : jm.contreras.phd@gmail.com
   uri              :
   bitbucket        :
   codepen          :
@@ -73,18 +73,18 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : https://github.com/jm-contreras
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : https://www.linkedin.com/in/jmcontreras
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          :
+  twitter          : https://twitter.com/JMContrerasPhD
   vine             :
   weibo            :
   xing             :
