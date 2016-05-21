@@ -1,7 +1,7 @@
 ---
 title: "Publications"
 sitemap: true
-permalink: /publications.html
+permalink: /publications
 defaults:
   # _pages
   - scope:
