@@ -12,4 +12,4 @@ defaults:
       author_profile: true
 ---
 
-Sorry, but the page you were trying to view does not exist --- perhaps you can try searching for it below.
+What's up?
