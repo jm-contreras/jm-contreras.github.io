@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: archive
 title: Publications
 permalink: /publications/
 modified: 2015-10-16
