@@ -32,4 +32,13 @@ Automated *De Novo* Transcriptome Analysis Using an Integrative Python Framework
 **Pierce, N.T.**, Navarro, M.O., Bockmon, E.E., Burton, R.S., Gaasterland, T.
 Genome-wide Gene Expression Response of *Doryteuthis opalescens* Embryos to Low pH and Low Oxygen Conditions. *in prep* 
 
-[Contact](mailto:tessa@ucsd.edu)
+
+{% include base_path %}
+
+<!-- <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts }}</h3> -->
+
+{% for post in paginator.posts %}
+  {% include archive-single.html %}
+{% endfor %}
+
+{% include paginator.html %}
