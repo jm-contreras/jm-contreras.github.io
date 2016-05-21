@@ -1,12 +1,8 @@
 ---
 layout: archive
+author_profile: true
 title: Publications
 permalink: /publications/
-modified: 2015-10-16
-tags: [publications]
-image: 
-  feature:
-  credit: Tessa Pierce
 ---
 [Google Scholar Profile](http://scholar.google.com/citations?user=3HU8c9EAAAAJ&hl=en&oi=ao/)
 
