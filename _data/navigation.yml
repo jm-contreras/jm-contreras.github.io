@@ -3,8 +3,8 @@ main:
   - title: "Publications"
     url: https://jm-contreras.github.io/publications/
 
-  - title: # "About"
-    url: # https://mmistakes.github.io/minimal-mistakes/
+  - title: "Favorite Things"
+    url: https://jm-contreras.github.io/favorites/
 
   - title: # "Sample Posts"
     url: # https://mmistakes.github.io/minimal-mistakes/year-archive/
