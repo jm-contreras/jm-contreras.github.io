@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Juan Manuel Contreras, PhD"
 title_separator          : "-"
 name                     : "Juan Manuel Contreras"
-description              : "A personal website."
+description              : "Juan Manuel Contreras, PhD is a principal data scientist at Capital One."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
