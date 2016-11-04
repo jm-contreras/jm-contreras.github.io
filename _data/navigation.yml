@@ -1,10 +1,7 @@
 # main links links
 main:
   - title: "Publications"
-    url: https://jm-contreras.github.io/publications/
-
-  - title: "Favorites"
-    url: https://jm-contreras.github.io/favorites/
+    url: https://jm-contreras.github.io/publications.html
 
   - title: # "Sample Posts"
     url: # https://mmistakes.github.io/minimal-mistakes/year-archive/
