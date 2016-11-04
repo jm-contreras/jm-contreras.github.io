@@ -1,13 +1,4 @@
 # main links links
 main:
   - title: "Publications"
-    url: https://jm-contreras.github.io/publications.html
-
-  - title: # "Sample Posts"
-    url: # https://mmistakes.github.io/minimal-mistakes/year-archive/
-
-  - title: # "Sample Pages"
-    url: # https://mmistakes.github.io/minimal-mistakes/page-archive/
-
-  - title: # "Sample Collections"
-    url: # https://mmistakes.github.io/minimal-mistakes/collection-archive/
+    url: https://jm-contreras.github.io/publications/
