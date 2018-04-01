@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Juan Manuel Contreras, PhD"
 title_separator          : "-"
 name                     : "Juan Manuel Contreras"
-description              : "Juan Manuel Contreras, PhD is a principal data scientist at Capital One."
+description              : "Juan Manuel Contreras, PhD is head of data science at Even."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
@@ -65,8 +65,8 @@ google_ad_slot           :
 author:
   name             : "Juan Manuel Contreras, PhD"
   avatar           : "bio-photo.jpg"
-  bio              : "Data scientist.<br/>Behavioral scientist.<br/>Bolivian-American.<br/>Retired bassist."
-  location         : "Washington, DC"
+  bio              : "Data scientist.<br/>Behavioral scientist.<br/>Progressive rationalist.<br/>Bolivian-American."
+  location         : "San Francisco, CA"
   email            : jm.contreras.phd@gmail.com
   uri              :
   bitbucket        :
