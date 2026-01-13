@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jm-contreras.github.io/sitemap.xml

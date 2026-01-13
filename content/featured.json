@@ -1,0 +1,13 @@
+{
+  "projects": [
+    {"id":"aymara","title":"Aymara","desc":"LLM Risk & Responsibility Matrix; tooling and framework for model risk evaluation.","link":"https://arxiv.org/abs/2507.14719"}
+  ],
+  "publications": [
+    {"title":"Automated evaluation of gender bias across 13 large multimodal models","venue":"arXiv","year":2025,"link":"https://arxiv.org/abs/2509.07050"},
+    {"title":"Automated safety evaluations across 20 large language models: The Aymara LLM Risk and Responsibility Matrix","venue":"arXiv","year":2025,"link":"https://arxiv.org/abs/2507.14719"}
+  ],
+  "writing": [
+    {"title":"On reproducibility in ML","date":"2025-01-01","excerpt":"Short excerpt describing the main takeaway.","link":"https://medium.com/@juanmaphd"},
+    {"title":"Practical robustness","date":"2024-10-01","excerpt":"Short excerpt describing the main takeaway.","link":"https://medium.com/@juanmaphd"}
+  ]
+}

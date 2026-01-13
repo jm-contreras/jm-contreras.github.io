@@ -1,0 +1,42 @@
+name: Update Medium Posts
+
+on:
+  schedule:
+    # Run daily at 12:00 UTC
+    - cron: '0 12 * * *'
+  
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+jobs:
+  update-posts:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install xml2js
+      
+      - name: Update Medium posts
+        run: node scripts/update-medium-posts.js
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet content/writing.json; then
+            echo "No changes to writing.json"
+          else
+            echo "Updating writing.json..."
+            git add content/writing.json
+            git commit -m "chore: update medium posts"
+            git push
+          fi
