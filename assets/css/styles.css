@@ -24,6 +24,7 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .about-photo img{width:120px;border-radius:8px}
 .projects-grid{display:grid;grid-template-columns:1fr;gap:1rem}
 .project{padding:1rem;border:1px solid #eee;border-radius:8px}
+.project a img{max-width:100%;height:auto;display:block}
 .pub-list{list-style:none;padding:0;margin:0}
 .writing-highlights{display:grid;grid-template-columns:1fr;gap:2rem;margin:2rem 0}
 .writing-item{padding:1.5rem;border:1px solid #eee;border-radius:8px}
