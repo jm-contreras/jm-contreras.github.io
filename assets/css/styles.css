@@ -39,10 +39,16 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .hero-inner{display:block;max-width:var(--max-width);margin:0 auto;padding:2rem}
 .hero-photo img{width:200px;border-radius:12px}
 .blog-list article{margin-bottom:1rem}
-.essays-list,.creative-list{list-style:none;padding:0;margin:0}.essays-list li, .creative-list li{margin-bottom:1.5rem;display:flex;gap:1rem;align-items:flex-start}
-.essays-list .post-image, .creative-list .post-image{width:120px;height:80px;object-fit:cover;border-radius:4px;flex-shrink:0}.essays-list li,.creative-list li{margin-bottom:.75rem}
-.essays-list a,.creative-list a{text-decoration:none;color:var(--text)}
-.essays-list a:hover,.creative-list a:hover{text-decoration:underline}
+.essays-list, .creative-list{list-style:none;padding:0;margin:0}
+.essays-list li, .creative-list li{margin-bottom:2rem}
+.post-item{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;align-items:start}
+.post-image{width:120px;height:80px;object-fit:cover;border-radius:4px;flex-shrink:0;grid-column:1;grid-row:1/3}
+.post-content{grid-column:2}
+.post-content h3{margin:0 0 0.5rem 0;font-size:1.1rem}
+.post-content h3 a{text-decoration:none;color:var(--text)}
+.post-content h3 a:hover{text-decoration:underline}
+.post-date{margin:0 0 0.75rem 0;font-size:0.9rem;color:#999}
+.post-excerpt{margin:0;font-size:0.95rem;line-height:1.5;color:#666}
 .contact-inner{display:flex;flex-direction:column;gap:.5rem}
 .contact-form{display:grid;gap:1rem;max-width:500px}
 .form-group{display:grid;gap:.5rem}

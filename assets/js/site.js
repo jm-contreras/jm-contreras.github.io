@@ -47,9 +47,13 @@
       const essays = posts.filter(p => p.tags && p.tags.some(t => t.toLowerCase() === 'essay'));
       if(essaysList){
         essaysList.innerHTML = essays.length ? essays.map(p => `
-          <li>
+          <li class="post-item">
             ${p.image ? `<img src="${p.image}" alt="${p.title}" class="post-image">` : ''}
-            <a href="${p.url}" target="_blank" rel="noopener">${p.title}</a> — ${new Date(p.date).toLocaleDateString('en-US', {year:'numeric', month:'short'})}
+            <div class="post-content">
+              <h3><a href="${p.url}" target="_blank" rel="noopener">${p.title}</a></h3>
+              <p class="post-date">${new Date(p.date).toLocaleDateString('en-US', {year:'numeric', month:'long'})}</p>
+              ${p.excerpt ? `<p class="post-excerpt">${p.excerpt}</p>` : ''}
+            </div>
           </li>
         `).join('\n') : '<li>No essays yet.</li>';
       }
@@ -58,9 +62,13 @@
       const creative = posts.filter(p => p.tags && p.tags.some(t => t.toLowerCase() === 'creative'));
       if(creativeList){
         creativeList.innerHTML = creative.length ? creative.map(p => `
-          <li>
+          <li class="post-item">
             ${p.image ? `<img src="${p.image}" alt="${p.title}" class="post-image">` : ''}
-            <a href="${p.url}" target="_blank" rel="noopener">${p.title}</a> — ${new Date(p.date).toLocaleDateString('en-US', {year:'numeric', month:'short'})}
+            <div class="post-content">
+              <h3><a href="${p.url}" target="_blank" rel="noopener">${p.title}</a></h3>
+              <p class="post-date">${new Date(p.date).toLocaleDateString('en-US', {year:'numeric', month:'long'})}</p>
+              ${p.excerpt ? `<p class="post-excerpt">${p.excerpt}</p>` : ''}
+            </div>
           </li>
         `).join('\n') : '<li>No creative pieces yet.</li>';
       }
