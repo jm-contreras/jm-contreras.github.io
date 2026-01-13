@@ -55,12 +55,17 @@ function extractPosts(parsedFeed) {
       imageUrl = imgMatch[1];
     }
 
+    // Clean up excerpt: remove HTML, remove Medium link text, truncate
+    let excerpt = description.replace(/<[^>]*>/g, '');
+    excerpt = excerpt.replace(/Continue reading on Medium[^]*$/, '').trim();
+    excerpt = excerpt.substring(0, 150) || '';
+
     const post = {
       title: item.title?.[0] || 'Untitled',
       url: item.link?.[0] || '',
       date: item.pubDate?.[0] ? new Date(item.pubDate[0]).toISOString().split('T')[0] : '',
       tags: hasEssayTag ? ['Essay'] : hasCreativeTag ? ['Creative'] : [],
-      excerpt: description.replace(/<[^>]*>/g, '').substring(0, 150) || '',
+      excerpt: excerpt,
       ...(imageUrl && { image: imageUrl })
     };
 
