@@ -11,6 +11,8 @@ on:
 jobs:
   update-posts:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout code
@@ -38,5 +40,5 @@ jobs:
             echo "Updating writing.json..."
             git add content/writing.json
             git commit -m "chore: update medium posts"
-            git push
+            git push origin main
           fi
