@@ -1,6 +1,16 @@
 {
   "medium_posts": [
     {
+      "title": "Your Year with ChatGPT",
+      "url": "https://juanmaphd.medium.com/your-year-with-chatgpt-28e208042b5d?source=rss-b626c64c5e16------2",
+      "date": "2026-01-16",
+      "tags": [
+        "Creative"
+      ],
+      "excerpt": "A Year of Asking a Calculator If Your Friends Hate You",
+      "image": "https://cdn-images-1.medium.com/max/1536/1*FVOzAJW0q46NthqLM6wr4A.png"
+    },
+    {
       "title": "Why tech products should be designed alongside psychologists",
       "url": "https://juanmaphd.medium.com/why-tech-products-should-be-designed-alongside-psychologists-f929cab3dda0?source=rss-b626c64c5e16------2",
       "date": "2022-03-25",
@@ -51,5 +61,5 @@
       "image": "https://cdn-images-1.medium.com/max/600/0*N3cOnFXIxbTIQrwo.JPG"
     }
   ],
-  "last_updated": "2026-01-15T12:30:09.531Z"
+  "last_updated": "2026-01-16T02:50:36.586Z"
 }
