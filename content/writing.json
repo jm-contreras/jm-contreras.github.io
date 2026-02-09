@@ -1,6 +1,16 @@
 {
   "medium_posts": [
     {
+      "title": "Your Year with ChatGPT",
+      "url": "https://juanmaphd.medium.com/your-year-with-chatgpt-28e208042b5d?source=rss-b626c64c5e16------2",
+      "date": "2026-01-16",
+      "tags": [
+        "Creative"
+      ],
+      "excerpt": "A Year of Asking a Calculator If Your Friends Hate You",
+      "image": "https://cdn-images-1.medium.com/max/1536/1*FVOzAJW0q46NthqLM6wr4A.png"
+    },
+    {
       "title": "Why tech products should be designed alongside psychologists",
       "url": "https://juanmaphd.medium.com/why-tech-products-should-be-designed-alongside-psychologists-f929cab3dda0?source=rss-b626c64c5e16------2",
       "date": "2022-03-25",
@@ -9,7 +19,47 @@
       ],
       "excerpt": "This essay was published by The Decision Lab on March 24, 2022.",
       "image": "https://cdn-images-1.medium.com/max/2048/1*wnY8XbnEjGkRCt_7AGusug.jpeg"
+    },
+    {
+      "title": "Three questions for a data science manager",
+      "url": "https://medium.com/data-science/three-questions-for-a-data-science-manager-7d5ccc0a06de?source=rss-b626c64c5e16------2",
+      "date": "2021-08-29",
+      "tags": [
+        "Essay"
+      ],
+      "excerpt": "A framework for data science managementContinue reading on TDS Archive »",
+      "image": "https://cdn-images-1.medium.com/max/1170/0*XTL7jqrfXTacCWPX.jpg"
+    },
+    {
+      "title": "Returning to a new place",
+      "url": "https://juanmaphd.medium.com/returning-to-a-new-place-3f94a41f8856?source=rss-b626c64c5e16------2",
+      "date": "2021-08-18",
+      "tags": [
+        "Essay"
+      ],
+      "excerpt": "Every year, I return to my hometown of La Paz in the Andean altiplano of Bolivia. Every time, the city seems unchanged at first. Its&#x2026;",
+      "image": "https://cdn-images-1.medium.com/max/1000/0*Xx19Cx5XbSnhAJWm.jpg"
+    },
+    {
+      "title": "Americans from elsewhere",
+      "url": "https://juanmaphd.medium.com/americans-from-elsewhere-4e3744bdafb5?source=rss-b626c64c5e16------2",
+      "date": "2021-08-17",
+      "tags": [
+        "Essay"
+      ],
+      "excerpt": "There is a group of people in the United States with roots in Latin America who are described interchangeably as Latinx, Latino, or&#x2026;",
+      "image": "https://cdn-images-1.medium.com/max/1561/0*CRSV37vJLfsicaJg.jpg"
+    },
+    {
+      "title": "La brecha política en Bolivia",
+      "url": "https://juanmaphd.medium.com/la-brecha-pol%C3%ADtica-en-bolivia-746520ee4bd9?source=rss-b626c64c5e16------2",
+      "date": "2021-03-23",
+      "tags": [
+        "Essay"
+      ],
+      "excerpt": "Este ensayo fue publicado en el peri&#xF3;dico P&#xE1;gina Siete el 22 de marzo de 2021.",
+      "image": "https://cdn-images-1.medium.com/max/600/0*N3cOnFXIxbTIQrwo.JPG"
     }
   ],
-  "last_updated": "2026-01-13T05:01:24.787Z"
+  "last_updated": "2026-02-09T12:51:16.665Z"
 }
