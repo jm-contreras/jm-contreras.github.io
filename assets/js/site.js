@@ -116,14 +116,83 @@
     }
   }
   
+  // Load speaking from speaking.json
+  async function loadSpeaking(){
+    const list = document.getElementById('speaking-list');
+    if(!list) return;
+    try{
+      const resp = await fetch('/content/speaking.json');
+      if(!resp.ok) throw new Error('Failed to load speaking.json');
+      const data = await resp.json();
+      const talks = (data.talks || []).sort((a,b) => new Date(b.date) - new Date(a.date));
+      list.innerHTML = talks.length ? talks.map(t => {
+        const dateStr = new Date(t.date).toLocaleDateString('en-US', {year:'numeric', month:'long'});
+        const typeLabel = t.type ? t.type.charAt(0).toUpperCase()+t.type.slice(1) : 'Talk';
+        const primaryUrl = t.links && t.links[0] ? t.links[0].url : '#';
+        const badges = t.links ? t.links.map((l,i) =>
+          `${i>0?'<span class="sep">·</span>':''}<a href="${l.url}" target="_blank" rel="noopener">${l.platform}</a>`
+        ).join('') : '';
+        return `
+          <li class="post-item">
+            ${t.thumbnail ? `<img src="${t.thumbnail}" alt="${t.title}" class="post-image">` : '<div class="post-thumb-placeholder"></div>'}
+            <div class="post-content">
+              <h3><a href="${primaryUrl}" target="_blank" rel="noopener">${t.title}</a></h3>
+              <p class="post-date">${typeLabel} · ${dateStr}${t.venue ? ' · ' + t.venue : ''}</p>
+              ${t.description ? `<p class="post-excerpt">${t.description}</p>` : ''}
+              ${badges ? `<p class="platform-links">${badges}</p>` : ''}
+            </div>
+          </li>`;
+      }).join('\n') : '<li>No speaking engagements yet.</li>';
+    }catch(err){
+      console.error('Error loading speaking:', err);
+    }
+  }
+
+  // Load featured speaking for homepage
+  async function loadFeaturedSpeaking(){
+    const container = document.getElementById('featured-speaking');
+    if(!container) return;
+    try{
+      const resp = await fetch('/content/speaking.json');
+      if(!resp.ok) throw new Error('Failed to load speaking.json');
+      const data = await resp.json();
+      const featured = (data.talks || []).filter(t => t.featured).slice(0,3);
+
+      container.innerHTML = featured.map(t => {
+        const dateStr = new Date(t.date).toLocaleDateString('en-US', {year:'numeric', month:'short'});
+        const typeLabel = t.type ? t.type.charAt(0).toUpperCase()+t.type.slice(1) : 'Talk';
+        const primaryUrl = t.links && t.links[0] ? t.links[0].url : '#';
+        const shortDesc = t.description && t.description.length > 150
+          ? t.description.substring(0, 150) + '...'
+          : t.description;
+        const thumbHtml = t.thumbnail
+          ? `<img src="${t.thumbnail}" alt="${t.title}" class="post-image" style="width:100%;height:auto;max-width:300px;margin-bottom:1rem;border-radius:4px;">`
+          : '';
+        return `
+          <article class="writing-item">
+            ${thumbHtml}
+            <h3><a href="${primaryUrl}" target="_blank" rel="noopener">${t.title}</a></h3>
+            <p class="excerpt">${shortDesc}</p>
+            <p class="meta">${typeLabel} · ${dateStr}${t.venue ? ' · ' + t.venue : ''}</p>
+          </article>`;
+      }).join('\n');
+    }catch(err){
+      console.error('Error loading featured speaking:', err);
+    }
+  }
+
   // Run after DOM is ready
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', () => {
       loadWritingPosts();
       loadFeaturedWriting();
+      loadSpeaking();
+      loadFeaturedSpeaking();
     });
   } else {
     loadWritingPosts();
     loadFeaturedWriting();
+    loadSpeaking();
+    loadFeaturedSpeaking();
   }
 })();

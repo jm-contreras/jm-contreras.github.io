@@ -1,0 +1,140 @@
+{
+  "talks": [
+    {
+      "title": "Datos de la seguridad y el sesgo en 37 modelos de IA generativa",
+      "date": "2025-10-05",
+      "type": "interview",
+      "venue": "Data Latam Podcast",
+      "description": "Discussion of Aymara's AI safety evaluation tools and key findings from our LLM Risk and Responsibility Matrix, including systemic vulnerabilities in professional advice disclaimers and privacy/impersonation risks, plus multimodal gender bias assessments showing how design choices can mitigate stereotypes.",
+      "links": [
+        { "platform": "Website", "url": "https://www.datalatam.com/122/" },
+        { "platform": "Apple Podcasts", "url": "https://podcasts.apple.com/us/podcast/datos-de-la-seguridad-y-el-sesgo-en-37-modelos/id1129424808?i=1000730315514" }
+      ],
+      "thumbnail": "/assets/img/data_latam.png",
+      "featured": false
+    },
+    {
+      "title": "De psicología y neurociencia a emprender en IA Generativa",
+      "date": "2024-09-10",
+      "type": "interview",
+      "venue": "Data Latam Podcast",
+      "description": "Introduction to Aymara and my path from cognitive neuroscience at Harvard to AI safety, discussing how my research on implicit bias and Cara's experience with algorithmic responsibility at Spotify led us to build tools for safer GenAI deployments, with focus on Latin America and Spanish-speaking markets.",
+      "links": [
+        { "platform": "Website", "url": "https://datalatam.com/103/" },
+        { "platform": "Spotify", "url": "https://open.spotify.com/episode/5GDSD3GbJlJtEaLiFa8wmj?si=8b4394a49b5f4e04" },
+        { "platform": "Apple Podcasts", "url": "https://podcasts.apple.com/us/podcast/de-psicolog%C3%ADa-y-neurociencia-a-emprender-en/id1129424808?i=1000651011659" }
+      ],
+      "thumbnail": "/assets/img/data_latam.png"
+    },
+    {
+      "title": "AI Alignment",
+      "date": "2025-04-23",
+      "type": "interview",
+      "venue": "Cities Decoded Podcast",
+      "description": "Conversation on Aymara's mission to help developers align generative AI, the importance of flexible and context-sensitive safety tools, and thoughts on AI regulation as an enabler rather than obstacle to innovation, plus reflections on building in the DC tech ecosystem.",
+      "links": [
+        { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=TxDFfmJcIwk" },
+        { "platform": "Spotify", "url": "https://open.spotify.com/episode/0Ott2QxTbGnwFOtpEcPj7P?si=sBRSoIFqRyaQBk3P1FA5Gg" },
+        { "platform": "Apple Podcasts", "url": "https://podcasts.apple.com/us/podcast/s1-e6-ai-alignment-with-juan-manuel-contreras/id1796505396?i=1000704592876" }
+      ],
+      "thumbnail": "https://img.youtube.com/vi/TxDFfmJcIwk/mqdefault.jpg",
+      "featured": false
+    },
+    {
+      "title": "The Surprising \u201cRiskiest\u201d to \u201cSafest\u201d LLMs with Aymara",
+      "date": "2025-10-06",
+      "type": "interview",
+      "venue": "Cities Decoded Podcast",
+      "description": "Walkthrough of two Aymara studies: our LLM Risk & Responsibility Matrix evaluating safety across 20 models (with 76% failure on privacy/impersonation), and our multimodal gender bias analysis of 13 image generators showing systematic stereotype amplification—plus discussion of why independent benchmarking matters and how enterprises should approach AI safety evaluation.",
+      "links": [
+        { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=aBpbQPCw9wU" },
+        { "platform": "Spotify", "url": "https://open.spotify.com/episode/4ujX4p0ACn0nX0YLDmdLGi?si=kivnuphCTW6HDdlsQF2BSw" },
+        { "platform": "Apple Podcasts", "url": "https://podcasts.apple.com/us/podcast/s1-e17-the-surprising-riskiest-to-safest-llms-with-aymara/id1796505396?i=1000730392836" }
+      ],
+      "thumbnail": "https://img.youtube.com/vi/aBpbQPCw9wU/mqdefault.jpg",
+      "featured": true
+    },
+    {
+      "title": "¿Es la IA un reflejo de los prejuicios humanos y una amenaza para la privacidad?",
+      "date": "2024-12-11",
+      "type": "talk",
+      "venue": "ASIPI Conference",
+      "description": "Demonstration of how generative AI reflects human biases, including a live IP infringement exercise with DALL·E 3 and findings from my Harvard research showing GPT-4's gender bias in hiring scenarios—plus a framework for measuring and mitigating bias through data selection, output filtering, and systematic testing.",
+      "links": [
+        { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=Esxd3ID2cuU&t=1285s" }
+      ],
+      "thumbnail": "https://img.youtube.com/vi/Esxd3ID2cuU/mqdefault.jpg",
+      "featured": true
+    },
+    {
+      "title": "Ethical and Safety Considerations in AI Use",
+      "date": "2024-06-11",
+      "type": "talk",
+      "venue": "ASIPI Conference",
+      "description": "Presentation on operationalizing generative AI alignment for enterprises—covering how to define alignment across legal, compliance, and engineering teams, measure it through bias testing, hallucination detection, and boundary compliance, and maintain it through continuous monitoring and realignment processes.",
+      "links": [
+        { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=LvkNxSeML7w&t=1982s" }
+      ],
+      "thumbnail": "https://img.youtube.com/vi/LvkNxSeML7w/mqdefault.jpg"
+    },
+    {
+      "title": "Legal data science at Uber",
+      "date": "2021-05-04",
+      "type": "interview",
+      "venue": "The Data Standard",
+      "description": "Deep dive into legal data science at Uber—how my team supports litigation, regulation, and competition work by translating legal questions into data-driven analyses, plus thoughts on generalist vs. specialist team structures and navigating imposter syndrome.",
+      "links": [
+        { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=SN-ZZEso1tI&t" },
+        { "platform": "Spotify", "url": "https://open.spotify.com/episode/66raCID1speTsTtW1wMhLr?si=bb2f66f8ac0f4af6" }
+      ],
+      "thumbnail": "https://img.youtube.com/vi/SN-ZZEso1tI/mqdefault.jpg"
+    },
+    {
+      "title": "AI For Impact Panel",
+      "date": "2024-09-26",
+      "type": "panel",
+      "venue": "Halcyon Innovation Summit",
+      "description": "I outlined a three-step framework for AI governance—defining use-case-specific policies, assigning cross-functional responsibilities, and implementing measurement systems—and discussed how the lack of comprehensive regulation leaves organizations dependent on generic model safeguards, plus my view that AI's greatest promise is democratizing access to medical, legal, and financial advice.",
+      "links": [
+        { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=elpfPi0NxNo" }
+      ],
+      "thumbnail": "https://img.youtube.com/vi/elpfPi0NxNo/mqdefault.jpg",
+      "featured": true
+    },
+    {
+      "title": "Data Science",
+      "date": "2020-11-27",
+      "type": "interview",
+      "venue": "Distopía Podcast",
+      "description": "Conversation on my path from cognitive neuroscience to data science, what data scientists actually do, how recommendation systems shape behavior at scale, and thoughts on AI's future—plus reflections on navigating a Bolivian-American identity.",
+      "links": [
+        { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=pUAXtb8pSlI" },
+        { "platform": "Spotify", "url": "https://open.spotify.com/episode/753xJxbRPI8QXtU8E6Y3nv?si=cYFxyjVoQ5ypkbbj0pD6dg" },
+        { "platform": "Apple Podcasts", "url": "https://podcasts.apple.com/us/podcast/data-science-con-juan-manuel-contreras-phd/id1543131650?i=1000501173289" }
+      ],
+      "thumbnail": "https://img.youtube.com/vi/pUAXtb8pSlI/mqdefault.jpg"
+    },
+    {
+      "title": "Beyond Individual Contribution: How to Lead Data Science Teams",
+      "date": "2019-08-24",
+      "type": "talk",
+      "venue": "ODSC India",
+      "description": "Framework for transitioning from individual contributor to data science leader, drawing on my experience heading data science at the Democratic Party and Even.com—covering team management, setting organizational vision, and practical lessons for new data science leaders.",
+      "links": [
+        { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=C9t6bhLJd7M" }
+      ],
+      "thumbnail": "https://img.youtube.com/vi/C9t6bhLJd7M/mqdefault.jpg"
+    },
+    {
+      "title": "Needs vs Wants: Humans Gonna Human",
+      "date": "2019-06-11",
+      "type": "interview",
+      "venue": "Money Ha Ha Podcast",
+      "description": "Discussion applying behavioral science to personal finance—explaining how cognitive biases like opportunity cost neglect, psychological pricing, and loss aversion shape spending decisions, with practical strategies for distinguishing needs from wants.",
+      "links": [
+        { "platform": "Spotify", "url": "https://open.spotify.com/episode/20M461Hv6PpESEbVWsItIG?si=673428d6b41f4912" }
+      ],
+      "thumbnail": "/assets/img/money_haha.jpg"
+    }
+  ]
+}
