@@ -79,3 +79,10 @@ html{scroll-behavior:smooth}
 /* utility */
 .meta{color:var(--muted);font-size:.95rem}
 .muted-link{color:var(--muted);font-size:.95rem;text-decoration:none}
+/* experience section */
+.experience-list{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:1.5rem}
+.experience-item{padding:1.25rem;border-left:3px solid var(--accent);background:#f9fafb;border-radius:4px}
+.experience-item h3{margin:0 0 .25rem 0;font-size:1.1rem}
+.experience-item .role{margin:.25rem 0;color:var(--text);font-size:.95rem}
+.experience-item .dates{margin:.25rem 0;color:var(--muted);font-size:.9rem}
+@media(min-width:768px){.experience-list{grid-template-columns:repeat(2,1fr)}}
