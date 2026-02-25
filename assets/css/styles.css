@@ -10,7 +10,7 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .site-nav{display:flex;gap:1rem;align-items:center}
 .site-nav a{color:var(--text);text-decoration:none;font-size:0.95rem}
 .nav-toggle{display:none;background:none;border:0;font-size:1.25rem}
-.hero{padding:6rem 0 4rem}
+.hero{padding:6rem 0 2.5rem}
 .name{font-size:clamp(1.6rem,4vw,2.6rem);margin:0}
 .tagline{color:var(--muted);margin-top:.4rem}
 .hero-ctas{margin-top:1rem;display:flex;gap:0.75rem}
@@ -19,7 +19,9 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .social{margin-top:1rem;display:flex;gap:.5rem}
 .icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;background:#f4f6f8;color:var(--muted);text-decoration:none}
 .icon img{width:18px;height:18px;display:block}
-.section{padding:3rem 0;border-top:1px solid #f2f2f2}
+.section{padding:2rem 0;border-top:1px solid #f2f2f2}
+.section h2{margin:0 0 1rem 0}
+.section h2 + *{margin-top:0}
 .about-grid{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center}
 .about-photo img{width:120px;border-radius:8px}
 .projects-grid{display:grid;grid-template-columns:1fr;gap:1rem}
@@ -27,7 +29,7 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .project h3{margin:0}
 .project a img{max-width:100%;width:100%;height:auto;display:block;object-fit:contain}
 .pub-list{list-style:none;padding:0;margin:0}
-.writing-highlights{display:grid;grid-template-columns:1fr;gap:2rem;margin:2rem 0}
+.writing-highlights{display:grid;grid-template-columns:1fr;gap:2rem;margin:0 0 2rem}
 .writing-item{padding:1.5rem;border:1px solid #eee;border-radius:8px}
 .writing-item h3{margin-top:0;margin-bottom:0.5rem}
 .writing-item a{text-decoration:none;color:inherit}
@@ -80,7 +82,7 @@ html{scroll-behavior:smooth}
 .meta{color:var(--muted);font-size:.95rem}
 .muted-link{color:var(--muted);font-size:.95rem;text-decoration:none}
 /* experience section */
-.experience-list{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:1.5rem}
+.experience-list{display:grid;grid-template-columns:1fr;gap:1.5rem}
 .experience-item{padding:1.25rem;border-left:3px solid var(--accent);background:#f9fafb;border-radius:4px}
 .experience-item h3{margin:0 0 .25rem 0;font-size:1.1rem}
 .experience-item .role{margin:.25rem 0;color:var(--text);font-size:.95rem}
