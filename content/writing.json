@@ -51,7 +51,7 @@
       "image": "https://cdn-images-1.medium.com/max/1561/0*CRSV37vJLfsicaJg.jpg"
     },
     {
-      "title": "La Brecha Política en Bolivia",
+      "title": "La Brecha Política En Bolivia",
       "url": "https://juanmaphd.medium.com/la-brecha-pol%C3%ADtica-en-bolivia-746520ee4bd9?source=rss-b626c64c5e16------2",
       "date": "2021-03-23",
       "tags": [
@@ -67,10 +67,12 @@
       "title": "LLM Self-Reports Don't Predict LLM Behavior",
       "url": "/writing/llm-self-reports-dont-predict-llm-behavior/",
       "date": "2026-04-24",
-      "tags": ["Essay"],
+      "tags": [
+        "Essay"
+      ],
       "excerpt": "If you ask an LLM the questions from a personality test, it will give you coherent, consistent answers. Another LLM will give you systematically different answers. What do these responses mean?",
       "image": "/assets/img/posts/llm-self-reports/figure_2.png"
     }
   ],
-  "last_updated": "2026-04-27T13:21:09.912Z"
+  "last_updated": "2026-04-29T13:27:00.182Z"
 }
