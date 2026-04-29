@@ -13,6 +13,21 @@ const xml2js = require('xml2js');
 const MEDIUM_FEED_URL = 'https://medium.com/feed/@juanmaphd';
 const OUTPUT_FILE = path.join(__dirname, '../content/writing.json');
 
+const TITLE_CASE_LOWER = new Set(['a','an','and','as','at','but','by','for','from','if','in','nor','of','on','or','so','the','to','up','via','vs','with','yet']);
+
+function toTitleCase(str) {
+  const words = str.split(/(\s+|[—–-])/);
+  return words.map((w, i) => {
+    if (/^\s+$/.test(w) || /^[—–-]$/.test(w)) return w;
+    const lower = w.toLowerCase();
+    const isFirst = i === 0;
+    const isLast = i === words.length - 1;
+    const afterColon = i >= 2 && /[:?!]$/.test(words[i-2]);
+    if (!isFirst && !isLast && !afterColon && TITLE_CASE_LOWER.has(lower)) return lower;
+    return w.charAt(0).toUpperCase() + w.slice(1);
+  }).join('');
+}
+
 async function fetchFeed() {
   return new Promise((resolve, reject) => {
     https.get(MEDIUM_FEED_URL, (res) => {
@@ -61,7 +76,7 @@ function extractPosts(parsedFeed) {
     excerpt = excerpt.substring(0, 150) || '';
 
     const post = {
-      title: item.title?.[0] || 'Untitled',
+      title: toTitleCase(item.title?.[0] || 'Untitled'),
       url: item.link?.[0] || '',
       date: item.pubDate?.[0] ? new Date(item.pubDate[0]).toISOString().split('T')[0] : '',
       tags: hasEssayTag ? ['Essay'] : hasCreativeTag ? ['Creative'] : [],
@@ -82,12 +97,17 @@ function extractPosts(parsedFeed) {
 
 async function updateWritingJson(essays, creative) {
   const allPosts = [...essays, ...creative];
-  
+
   // Sort by date (newest first)
   allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  // Preserve any existing local_posts (self-hosted blog entries) on update.
+  let existing = {};
+  try { existing = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8')); } catch {}
+
   const output = {
     medium_posts: allPosts,
+    ...(existing.local_posts ? { local_posts: existing.local_posts } : {}),
     last_updated: new Date().toISOString()
   };
 

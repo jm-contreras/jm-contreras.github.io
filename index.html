@@ -14,10 +14,13 @@
   <meta property="og:image" content="https://juanma.phd/assets/img/headshot-square.jpg" />
   <meta property="og:image:width" content="400" />
   <meta property="og:image:height" content="400" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%23000'>JM</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Juan Manuel Contreras — AI Researcher & Founder" />
+  <meta name="twitter:description" content="AI product leader and researcher. Co-founder & CEO of Aymara. Former Applied Science Manager at Uber. PhD from Harvard, AB from Princeton." />
+  <meta name="twitter:image" content="https://juanma.phd/assets/img/headshot-square.jpg" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://juanma.phd" />
@@ -55,7 +58,9 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/"></a>
-      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
       <nav class="site-nav" id="site-nav">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -94,8 +99,6 @@
             <p>I have a PhD in cognitive neuroscience from Harvard and an AB from Princeton.</p>
             <p>Born in New York City and raised in Bolivia and the U.S., I run marathons, practice yoga, and am starting a band with AI musicians.</p>
           </div>
-          <div class="about-photo">
-          </div>
         </div>
       </div>
     </section>
@@ -115,7 +118,7 @@
             <p class="dates">2019–2023</p>
           </div>
           <div class="experience-item">
-            <h3>Even</h3>
+            <h3>Even (acquired by Walmart)</h3>
             <p class="role">Head of Data Science</p>
             <p class="dates">2018–2019</p>
           </div>
@@ -134,24 +137,36 @@
             <p class="role">Senior Data Scientist</p>
             <p class="dates">2014–2015</p>
           </div>
-          <div class="experience-item">
-            <h3>The Walt Disney Company</h3>
-            <p class="role">Decision Science Consultant</p>
-            <p class="dates">2013–2014</p>
-          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="writing">
       <div class="container">
-        <h2>Writing</h2>
+        <h2>Research &amp; Writing</h2>
         <p>Research, essays, and creative work on AI, cognition, and culture.</p>
+        <h4 class="row-label">Research</h4>
         <div class="writing-highlights">
+          <article class="writing-item research">
+            <h3><a href="https://juanma.phd/assets/pdf/llm-native-psychometric-instrument-does-not-predict-llm-behavior.pdf" target="_blank" rel="noopener">An LLM-native psychometric instrument does not predict LLM behavior: Evidence across 25 models</a></h3>
+            <p class="excerpt">A psychometric instrument designed for LLMs yields coherent, reliable self-reports that nonetheless fail to predict model behavior across 25 models.</p>
+            <p class="meta"><strong>Contreras, J. M.</strong> (submitted)</p>
+          </article>
+          <article class="writing-item research">
+            <h3><a href="https://arxiv.org/abs/2509.07050" target="_blank" rel="noopener">Automated evaluation of gender bias across 13 large multimodal models</a></h3>
+            <p class="excerpt">Automated evaluation of gender bias in image generation across 13 leading multimodal models.</p>
+            <p class="meta"><strong>Contreras, J. M.</strong> (2025) · arXiv</p>
+          </article>
           <article class="writing-item research">
             <h3><a href="https://arxiv.org/abs/2507.14719" target="_blank" rel="noopener">Automated safety evaluations across 20 large language models: The Aymara LLM Risk &amp; Responsibility Matrix</a></h3>
             <p class="excerpt">Framework and tooling for evaluating risk and responsibility of large language models across 10 real-world safety dimensions.</p>
             <p class="meta"><strong>Contreras, J. M.</strong> (2025) · arXiv</p>
+          </article>
+        </div>
+        <h4 class="row-label">Writing</h4>
+        <div class="writing-highlights">
+          <article class="writing-item analysis" id="featured-research">
+            <!-- Populated by loadFeaturedWriting() with LLM Self-Reports post -->
           </article>
           <article class="writing-item essay" id="featured-essay">
             <!-- Populated by loadFeaturedWriting() -->
@@ -179,8 +194,9 @@
       <div class="container contact-inner">
         <h2>Contact</h2>
         <p>Email me at jm.contreras.phd [at] gmail [dot] com or submit a message through my contact form.</p>
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
           <input type="hidden" name="access_key" value="e0ae072b-c6e5-4ad7-beb1-acdca2c802e3">
+          <input type="hidden" name="from_name" value="juanma.phd contact form">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -195,6 +211,7 @@
           </div>
           <div class="h-captcha" data-captcha="true"></div>
           <button type="submit" class="btn">Send</button>
+          <p id="contact-status" class="contact-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </section>

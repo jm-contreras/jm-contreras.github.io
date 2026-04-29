@@ -41,36 +41,31 @@
       const resp = await fetch('/content/writing.json');
       if(!resp.ok) throw new Error('Failed to load writing.json');
       const data = await resp.json();
-      const posts = data.medium_posts || [];
+      const posts = [...(data.local_posts || []), ...(data.medium_posts || [])]
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-      // Filter essays (posts with 'Essay' tag - case insensitive)
-      const essays = posts.filter(p => p.tags && p.tags.some(t => t.toLowerCase() === 'essay'));
-      if(essaysList){
-        essaysList.innerHTML = essays.length ? essays.map(p => `
+      const isExternal = (url) => /^https?:\/\//i.test(url);
+      const renderItem = (p) => `
           <li class="post-item">
             ${p.image ? `<img src="${p.image}" alt="${p.title}" class="post-image">` : ''}
             <div class="post-content">
-              <h3><a href="${p.url}" target="_blank" rel="noopener">${p.title}</a></h3>
+              <h3><a href="${p.url}"${isExternal(p.url) ? ' target="_blank" rel="noopener"' : ''}>${p.title}</a></h3>
               <p class="post-date">${new Date(p.date).toLocaleDateString('en-US', {year:'numeric', month:'long'})}</p>
               ${p.excerpt ? `<p class="post-excerpt">${p.excerpt}</p>` : ''}
             </div>
           </li>
-        `).join('\n') : '<li>No essays yet.</li>';
+        `;
+
+      // Filter essays (posts with 'Essay' tag - case insensitive)
+      const essays = posts.filter(p => p.tags && p.tags.some(t => t.toLowerCase() === 'essay'));
+      if(essaysList){
+        essaysList.innerHTML = essays.length ? essays.map(renderItem).join('\n') : '<li>No essays yet.</li>';
       }
 
       // Filter creative (posts with 'Creative' tag - case insensitive)
       const creative = posts.filter(p => p.tags && p.tags.some(t => t.toLowerCase() === 'creative'));
       if(creativeList){
-        creativeList.innerHTML = creative.length ? creative.map(p => `
-          <li class="post-item">
-            ${p.image ? `<img src="${p.image}" alt="${p.title}" class="post-image">` : ''}
-            <div class="post-content">
-              <h3><a href="${p.url}" target="_blank" rel="noopener">${p.title}</a></h3>
-              <p class="post-date">${new Date(p.date).toLocaleDateString('en-US', {year:'numeric', month:'long'})}</p>
-              ${p.excerpt ? `<p class="post-excerpt">${p.excerpt}</p>` : ''}
-            </div>
-          </li>
-        `).join('\n') : '<li>No creative pieces yet.</li>';
+        creativeList.innerHTML = creative.length ? creative.map(renderItem).join('\n') : '<li>No creative pieces yet.</li>';
       }
     }catch(err){
       console.error('Error loading writing posts:', err);
@@ -79,36 +74,54 @@
 
   // Load featured Medium posts for homepage
   async function loadFeaturedWriting(){
+    const researchItem = document.getElementById('featured-research');
     const essayItem = document.getElementById('featured-essay');
     const creativeItem = document.getElementById('featured-creative');
-    
-    if(!essayItem && !creativeItem) return;
-    
+
+    if(!researchItem && !essayItem && !creativeItem) return;
+
     try{
       const resp = await fetch('/content/writing.json');
       if(!resp.ok) throw new Error('Failed to load writing.json');
       const data = await resp.json();
-      const posts = data.medium_posts || [];
+      const localPosts = (data.local_posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
+      const mediumPosts = (data.medium_posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
 
-      // Get first essay
-      const essay = posts.find(p => p.tags && p.tags.some(t => t.toLowerCase() === 'essay'));
-      if(essayItem && essay){
-        const dateStr = new Date(essay.date).toLocaleDateString('en-US', {year:'numeric', month:'short'});
-        essayItem.innerHTML = `
-          <h3><a href="${essay.url}" target="_blank" rel="noopener">${essay.title}</a></h3>
-          <p class="excerpt">${essay.excerpt}</p>
-          <p class="meta">Essay · ${dateStr} · <a href="https://medium.com/@juanmaphd" target="_blank" rel="noopener">Medium</a></p>
+      const isExternal = (url) => /^https?:\/\//i.test(url);
+      const venueLink = (url) => isExternal(url)
+        ? '<a href="https://medium.com/@juanmaphd" target="_blank" rel="noopener">Medium</a>'
+        : '<a href="/writing">juanma.phd</a>';
+
+      // Get most recent local post for Research row
+      const research = localPosts[0];
+      if(researchItem && research){
+        const dateStr = new Date(research.date).toLocaleDateString('en-US', {year:'numeric', month:'short'});
+        researchItem.innerHTML = `
+          <h3><a href="${research.url}"${isExternal(research.url) ? ' target="_blank" rel="noopener"' : ''}>${research.title}</a></h3>
+          <p class="excerpt">${research.excerpt}</p>
+          <p class="meta">Analysis · ${dateStr} · <a href="/writing">juanma.phd</a></p>
         `;
       }
 
-      // Get first creative
-      const creative = posts.find(p => p.tags && p.tags.some(t => t.toLowerCase() === 'creative'));
+      // Get first essay from Medium only (local posts shown in Research row)
+      const essay = mediumPosts.find(p => p.tags && p.tags.some(t => t.toLowerCase() === 'essay'));
+      if(essayItem && essay){
+        const dateStr = new Date(essay.date).toLocaleDateString('en-US', {year:'numeric', month:'short'});
+        essayItem.innerHTML = `
+          <h3><a href="${essay.url}"${isExternal(essay.url) ? ' target="_blank" rel="noopener"' : ''}>${essay.title}</a></h3>
+          <p class="excerpt">${essay.excerpt}</p>
+          <p class="meta">Essay · ${dateStr} · ${venueLink(essay.url)}</p>
+        `;
+      }
+
+      // Get first creative from Medium only
+      const creative = mediumPosts.find(p => p.tags && p.tags.some(t => t.toLowerCase() === 'creative'));
       if(creativeItem && creative){
         const dateStr = new Date(creative.date).toLocaleDateString('en-US', {year:'numeric', month:'short'});
         creativeItem.innerHTML = `
-          <h3><a href="${creative.url}" target="_blank" rel="noopener">${creative.title}</a></h3>
+          <h3><a href="${creative.url}"${isExternal(creative.url) ? ' target="_blank" rel="noopener"' : ''}>${creative.title}</a></h3>
           <p class="excerpt">${creative.excerpt}</p>
-          <p class="meta">Creative · ${dateStr} · <a href="https://medium.com/@juanmaphd" target="_blank" rel="noopener">Medium</a></p>
+          <p class="meta">Creative · ${dateStr} · ${venueLink(creative.url)}</p>
         `;
       }
     }catch(err){
@@ -181,6 +194,45 @@
     }
   }
 
+  // Contact form: submit via fetch and show inline status
+  function initContactForm(){
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('contact-status');
+    if(!form || !status) return;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      status.hidden = true;
+      status.classList.remove('error','success');
+      try{
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {'Accept': 'application/json'}
+        });
+        const data = await resp.json().catch(() => ({}));
+        if(resp.ok && data.success !== false){
+          status.textContent = 'Thanks — your message was sent.';
+          status.classList.add('success');
+          form.reset();
+        } else {
+          status.textContent = (data && data.message) || 'Something went wrong. Please try again or email directly.';
+          status.classList.add('error');
+        }
+      }catch(err){
+        status.textContent = 'Network error. Please try again or email directly.';
+        status.classList.add('error');
+      }finally{
+        status.hidden = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    });
+  }
+
   // Run after DOM is ready
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', () => {
@@ -188,11 +240,13 @@
       loadFeaturedWriting();
       loadSpeaking();
       loadFeaturedSpeaking();
+      initContactForm();
     });
   } else {
     loadWritingPosts();
     loadFeaturedWriting();
     loadSpeaking();
     loadFeaturedSpeaking();
+    initContactForm();
   }
 })();

@@ -11,7 +11,7 @@
       "image": "https://cdn-images-1.medium.com/max/1536/1*FVOzAJW0q46NthqLM6wr4A.png"
     },
     {
-      "title": "Why tech products should be designed alongside psychologists",
+      "title": "Why Tech Products Should Be Designed Alongside Psychologists",
       "url": "https://juanmaphd.medium.com/why-tech-products-should-be-designed-alongside-psychologists-f929cab3dda0?source=rss-b626c64c5e16------2",
       "date": "2022-03-25",
       "tags": [
@@ -21,17 +21,17 @@
       "image": "https://cdn-images-1.medium.com/max/2048/1*wnY8XbnEjGkRCt_7AGusug.jpeg"
     },
     {
-      "title": "Three questions for a data science manager",
+      "title": "Three Questions for a Data Science Manager",
       "url": "https://medium.com/data-science/three-questions-for-a-data-science-manager-7d5ccc0a06de?source=rss-b626c64c5e16------2",
       "date": "2021-08-29",
       "tags": [
         "Essay"
       ],
-      "excerpt": "A framework for data science managementContinue reading on TDS Archive ��",
+      "excerpt": "A framework for data science managementContinue reading on TDS Archive »",
       "image": "https://cdn-images-1.medium.com/max/1170/0*XTL7jqrfXTacCWPX.jpg"
     },
     {
-      "title": "Returning to a new place",
+      "title": "Returning to a New Place",
       "url": "https://juanmaphd.medium.com/returning-to-a-new-place-3f94a41f8856?source=rss-b626c64c5e16------2",
       "date": "2021-08-18",
       "tags": [
@@ -41,7 +41,7 @@
       "image": "https://cdn-images-1.medium.com/max/1000/0*Xx19Cx5XbSnhAJWm.jpg"
     },
     {
-      "title": "Americans from elsewhere",
+      "title": "Americans from Elsewhere",
       "url": "https://juanmaphd.medium.com/americans-from-elsewhere-4e3744bdafb5?source=rss-b626c64c5e16------2",
       "date": "2021-08-17",
       "tags": [
@@ -51,7 +51,7 @@
       "image": "https://cdn-images-1.medium.com/max/1561/0*CRSV37vJLfsicaJg.jpg"
     },
     {
-      "title": "La brecha política en Bolivia",
+      "title": "La Brecha Política en Bolivia",
       "url": "https://juanmaphd.medium.com/la-brecha-pol%C3%ADtica-en-bolivia-746520ee4bd9?source=rss-b626c64c5e16------2",
       "date": "2021-03-23",
       "tags": [
@@ -59,6 +59,17 @@
       ],
       "excerpt": "Este ensayo fue publicado en el peri&#xF3;dico P&#xE1;gina Siete el 22 de marzo de 2021.",
       "image": "https://cdn-images-1.medium.com/max/600/0*N3cOnFXIxbTIQrwo.JPG"
+    }
+  ],
+  "local_posts": [
+    {
+      "slug": "llm-self-reports-dont-predict-llm-behavior",
+      "title": "LLM Self-Reports Don't Predict LLM Behavior",
+      "url": "/writing/llm-self-reports-dont-predict-llm-behavior/",
+      "date": "2026-04-24",
+      "tags": ["Essay"],
+      "excerpt": "If you ask an LLM the questions from a personality test, it will give you coherent, consistent answers. Another LLM will give you systematically different answers. What do these responses mean?",
+      "image": "/assets/img/posts/llm-self-reports/figure_2.png"
     }
   ],
   "last_updated": "2026-04-27T13:21:09.912Z"

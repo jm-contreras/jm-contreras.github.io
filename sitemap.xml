@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://jm-contreras.github.io/</loc></url>
-  <url><loc>https://jm-contreras.github.io/about.html</loc></url>
-  <url><loc>https://jm-contreras.github.io/publications.html</loc></url>
-  <url><loc>https://jm-contreras.github.io/blog.html</loc></url>
-  <url><loc>https://jm-contreras.github.io/writing</loc></url>
-  <url><loc>https://jm-contreras.github.io/speaking</loc></url>
+  <url><loc>https://juanma.phd/</loc></url>
+  <url><loc>https://juanma.phd/writing/</loc></url>
+  <url><loc>https://juanma.phd/writing/llm-self-reports-dont-predict-llm-behavior/</loc></url>
+  <url><loc>https://juanma.phd/speaking/</loc></url>
 </urlset>
