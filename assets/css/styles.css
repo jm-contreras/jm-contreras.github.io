@@ -1,7 +1,7 @@
 /* Minimal, fast styles - mobile-first */
 :root{--bg:#ffffff;--text:#0b1220;--muted:#555;--accent:#0a66c2;--max-width:980px}
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{min-height:100%}
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;color:var(--text);background:var(--bg);margin:0}
 .container{max-width:var(--max-width);margin:0 auto;padding:2rem}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
