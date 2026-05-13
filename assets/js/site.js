@@ -74,17 +74,15 @@
 
   // Load featured Medium posts for homepage
   async function loadFeaturedWriting(){
-    const researchItem = document.getElementById('featured-research');
     const essayItem = document.getElementById('featured-essay');
     const creativeItem = document.getElementById('featured-creative');
 
-    if(!researchItem && !essayItem && !creativeItem) return;
+    if(!essayItem && !creativeItem) return;
 
     try{
       const resp = await fetch('/content/writing.json');
       if(!resp.ok) throw new Error('Failed to load writing.json');
       const data = await resp.json();
-      const localPosts = (data.local_posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
       const mediumPosts = (data.medium_posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
 
       const isExternal = (url) => /^https?:\/\//i.test(url);
@@ -92,18 +90,7 @@
         ? '<a href="https://medium.com/@juanmaphd" target="_blank" rel="noopener">Medium</a>'
         : '<a href="/writing">juanma.phd</a>';
 
-      // Get most recent local post for Research row
-      const research = localPosts[0];
-      if(researchItem && research){
-        const dateStr = new Date(research.date).toLocaleDateString('en-US', {year:'numeric', month:'short'});
-        researchItem.innerHTML = `
-          <h3><a href="${research.url}"${isExternal(research.url) ? ' target="_blank" rel="noopener"' : ''}>${research.title}</a></h3>
-          <p class="excerpt">${research.excerpt}</p>
-          <p class="meta">Analysis · ${dateStr} · <a href="/writing">juanma.phd</a></p>
-        `;
-      }
-
-      // Get first essay from Medium only (local posts shown in Research row)
+      // Get first essay from Medium posts
       const essay = mediumPosts.find(p => p.tags && p.tags.some(t => t.toLowerCase() === 'essay'));
       if(essayItem && essay){
         const dateStr = new Date(essay.date).toLocaleDateString('en-US', {year:'numeric', month:'short'});
@@ -114,7 +101,7 @@
         `;
       }
 
-      // Get first creative from Medium only
+      // Get first creative from Medium posts
       const creative = mediumPosts.find(p => p.tags && p.tags.some(t => t.toLowerCase() === 'creative'));
       if(creativeItem && creative){
         const dateStr = new Date(creative.date).toLocaleDateString('en-US', {year:'numeric', month:'short'});
