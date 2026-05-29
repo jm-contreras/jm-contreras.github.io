@@ -16,6 +16,20 @@
     if(e.target.tagName === 'A' && window.innerWidth < 820){nav.classList.remove('open');toggle && toggle.setAttribute('aria-expanded','false')}
   });
 
+  // theme toggle (initial value set pre-paint by inline <head> script)
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle && themeToggle.addEventListener('click', ()=>{
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try{ localStorage.setItem('theme', next); }catch(e){}
+  });
+  // keep following the OS until the visitor makes an explicit choice
+  try{
+    matchMedia('(prefers-color-scheme:dark)').addEventListener('change', (e)=>{
+      if(!localStorage.getItem('theme')) document.documentElement.dataset.theme = e.matches ? 'dark' : 'light';
+    });
+  }catch(e){}
+
   // smooth hash scroll fallback for browsers without CSS smooth scroll
   function offsetScrollToHash(){
     if(location.hash){
@@ -47,7 +61,7 @@
       const isExternal = (url) => /^https?:\/\//i.test(url);
       const renderItem = (p) => `
           <li class="post-item">
-            ${p.image ? `<img src="${p.image}" alt="${p.title}" class="post-image">` : ''}
+            ${p.image ? `<img src="${p.image}" alt="${p.title}" class="post-image" loading="lazy">` : ''}
             <div class="post-content">
               <h3><a href="${p.url}"${isExternal(p.url) ? ' target="_blank" rel="noopener"' : ''}>${p.title}</a></h3>
               <p class="post-date">${new Date(p.date).toLocaleDateString('en-US', {year:'numeric', month:'long'})}</p>
@@ -134,7 +148,7 @@
         ).join('') : '';
         return `
           <li class="post-item">
-            ${t.thumbnail ? `<img src="${t.thumbnail}" alt="${t.title}" class="post-image">` : '<div class="post-thumb-placeholder"></div>'}
+            ${t.thumbnail ? `<img src="${t.thumbnail}" alt="${t.title}" class="post-image" loading="lazy">` : '<div class="post-thumb-placeholder"></div>'}
             <div class="post-content">
               <h3><a href="${primaryUrl}" target="_blank" rel="noopener">${t.title}</a></h3>
               <p class="post-date">${typeLabel} · ${dateStr}${t.venue ? ' · ' + t.venue : ''}</p>
@@ -166,7 +180,7 @@
           ? t.description.substring(0, 150) + '...'
           : t.description;
         const thumbHtml = t.thumbnail
-          ? `<img src="${t.thumbnail}" alt="${t.title}" class="post-image" style="width:100%;height:auto;max-width:300px;margin-bottom:1rem;border-radius:4px;">`
+          ? `<img src="${t.thumbnail}" alt="${t.title}" class="post-image" loading="lazy" style="width:100%;height:auto;max-width:300px;margin-bottom:1rem;border-radius:4px;">`
           : '';
         return `
           <article class="writing-item">

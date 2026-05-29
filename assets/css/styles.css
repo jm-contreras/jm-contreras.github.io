@@ -1,18 +1,30 @@
 /* Minimal, fast styles - mobile-first */
-:root{--bg:#ffffff;--text:#0b1220;--muted:#555;--accent:#0a66c2;--max-width:980px}
+:root{--bg:#ffffff;--text:#0b1220;--muted:#555;--accent:#0a66c2;--max-width:980px;--display:'Source Serif 4',Georgia,'Times New Roman',serif}
 *{box-sizing:border-box}
 html,body{min-height:100%}
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;color:var(--text);background:var(--bg);margin:0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
 .container{max-width:var(--max-width);margin:0 auto;padding:2rem}
-.header-inner{display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:600;text-decoration:none;color:var(--text);flex-shrink:0}
+.header-inner{display:flex;align-items:center;gap:1rem}
+.brand{font-weight:600;text-decoration:none;color:var(--text);flex-shrink:0;margin-right:auto}
 .site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:100}
 .site-nav{display:flex;gap:1rem;align-items:center}
 .site-nav a{color:var(--text);text-decoration:none;font-size:0.95rem}
 .nav-toggle{display:none;background:none;border:0;padding:.25rem;color:var(--text);cursor:pointer;align-items:center;justify-content:center}
-.hero{padding:6rem 0 2.5rem}
+.hero{padding:3rem 0 1.5rem}
+.scroll-cue{display:flex;justify-content:center;margin-top:1.5rem;color:var(--muted)}
+.scroll-cue svg{animation:scroll-bob 1.8s ease-in-out infinite}
+@keyframes scroll-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@media(prefers-reduced-motion:reduce){.scroll-cue svg{animation:none}}
 .name{font-size:clamp(1.6rem,4vw,2.6rem);margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.015em}
+.name{font-family:var(--display)}
 .tagline{color:var(--muted);margin-top:.4rem}
+.hero-creds{margin-top:.6rem;font-size:.95rem;color:var(--text)}
+.hero-creds a{color:var(--accent);text-decoration:none}
+.hero-creds a:hover{text-decoration:underline}
+.hero-creds .sep{color:#cbd2d9;margin:0 .4rem}
 .hero-ctas{margin-top:1rem;display:flex;gap:0.75rem}
 .btn{display:inline-block;padding:.6rem 1rem;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none}
 .btn-secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
@@ -41,12 +53,14 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .writing-section{margin-bottom:3rem}
 .row-label{font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#888;margin:1.5rem 0 0.75rem}
 .hero-inner{display:block;max-width:var(--max-width);margin:0 auto;padding:2rem}
-.hero-photo img{width:200px;border-radius:12px}
+.hero-photo img{width:200px;height:auto;border-radius:12px}
 .blog-list article{margin-bottom:1rem}
 .essays-list, .creative-list{list-style:none;padding:0;margin:0}
 .essays-list li, .creative-list li{margin-bottom:2rem}
 .post-item{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;align-items:start}
 .post-image{width:120px;height:80px;object-fit:cover;border-radius:4px;flex-shrink:0;grid-column:1;grid-row:1/3}
+/* transparent logo thumbnails need a constant light backing in both themes */
+.post-image[src*="data_latam"]{object-fit:contain;background:#fff;padding:4px}
 .post-content{grid-column:2}
 .post-content h3{margin:0 0 0.5rem 0;font-size:1.1rem}
 .post-content h3 a{text-decoration:none;color:var(--text)}
@@ -143,3 +157,35 @@ html{scroll-behavior:smooth}
 .srp-error{color:#b91c1c;font-size:.95rem;text-align:center;padding:1rem}
 .post-resources{list-style:none;padding:0;margin:1.5rem 0}
 .post-resources li{margin:.4rem 0}
+/* dark mode — driven by [data-theme]; inline <head> script sets it from saved choice or OS */
+:root{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0d1117;--text:#e6edf3;--muted:#9aa4b2;--accent:#5aa3f0}
+:root[data-theme="dark"] .site-header{background:#0d1117;border-bottom-color:#21262d}
+:root[data-theme="dark"] .brand,:root[data-theme="dark"] .site-nav a,:root[data-theme="dark"] .nav-toggle,:root[data-theme="dark"] .theme-toggle{color:var(--text)}
+/* social chips stay light in both themes so the full-color logos render identically */
+:root[data-theme="dark"] .section{border-top-color:#161b22}
+:root[data-theme="dark"] .project{border-color:#21262d}
+:root[data-theme="dark"] .writing-item{border-color:#21262d}
+:root[data-theme="dark"] .writing-item .excerpt,:root[data-theme="dark"] .post-excerpt{color:#9aa4b2}
+:root[data-theme="dark"] .writing-item .meta,:root[data-theme="dark"] .post-date{color:#7d8590}
+:root[data-theme="dark"] .row-label{color:#7d8590}
+:root[data-theme="dark"] .experience-item{background:#161b22}
+:root[data-theme="dark"] .post-content h3 a{color:var(--text)}
+:root[data-theme="dark"] .form-group input,:root[data-theme="dark"] .form-group textarea{background:#161b22;border-color:#30363d;color:var(--text)}
+:root[data-theme="dark"] .form-group input:focus,:root[data-theme="dark"] .form-group textarea:focus{box-shadow:0 0 0 3px rgba(90,163,240,0.18)}
+:root[data-theme="dark"] .post-thumb-placeholder{background:#161b22}
+:root[data-theme="dark"] .site-footer{border-top-color:#161b22}
+:root[data-theme="dark"] .site-nav{background:#0d1117;border-left-color:#21262d}
+:root[data-theme="dark"] .post article blockquote{background:#161b22;border-left-color:#30363d;color:#c9d1d9}
+:root[data-theme="dark"] .post-callout{background:#161b22}
+:root[data-theme="dark"] .post article hr{border-top-color:#21262d}
+:root[data-theme="dark"] .contact-status.success{background:#0f2a1a;color:#7ee2a8;border-color:#1f5135}
+:root[data-theme="dark"] .contact-status.error{background:#2a1213;color:#f0a4a4;border-color:#5a2326}
+/* theme toggle button */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;background:none;border:0;padding:.35rem;border-radius:6px;color:var(--text);cursor:pointer;flex-shrink:0;order:1}
+.theme-toggle:hover{background:#f4f6f8}
+:root[data-theme="dark"] .theme-toggle:hover{background:#21262d}
+.theme-toggle svg{width:20px;height:20px}
+.theme-toggle .icon-sun{display:none}
+:root[data-theme="dark"] .theme-toggle .icon-sun{display:inline}
+:root[data-theme="dark"] .theme-toggle .icon-moon{display:none}

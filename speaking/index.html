@@ -5,9 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Speaking — Juan Manuel Contreras</title>
   <meta name="description" content="Podcast interviews, conference talks, and panels featuring Juan Manuel Contreras." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}catch(e){}})();</script>
   <link rel="canonical" href="https://juanma.phd/speaking" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%23000'>JM</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="theme-color" content="#ffffff" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Speaking — Juan Manuel Contreras" />
+  <meta property="og:description" content="Podcast interviews, conference talks, and panels featuring Juan Manuel Contreras." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://juanma.phd/speaking" />
+  <meta property="og:image" content="https://juanma.phd/assets/img/headshot-square.jpg" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Speaking — Juan Manuel Contreras" />
+  <meta name="twitter:description" content="Podcast interviews, conference talks, and panels featuring Juan Manuel Contreras." />
+  <meta name="twitter:image" content="https://juanma.phd/assets/img/headshot-square.jpg" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8SW91J6BN"></script>
@@ -21,8 +37,14 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/">Juan Manuel Contreras, Ph.D.</a>
-      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <a class="brand" href="/">juanma.phd</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
       <nav class="site-nav" id="site-nav">
         <a href="/#about">About</a>
         <a href="/#experience">Experience</a>

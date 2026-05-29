@@ -19,7 +19,11 @@
   <meta name="twitter:title" content="Juan Manuel Contreras, Ph.D. — Researcher, AI Safety Evaluation & Model Behavior" />
   <meta name="twitter:description" content="Researcher in AI safety evaluation and model behavior. Co-founder & CEO of Aymara. Former Applied Science Manager at Uber. PhD from Harvard, AB from Princeton." />
   <meta name="twitter:image" content="https://juanma.phd/assets/img/headshot-square.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}catch(e){}})();</script>
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://juanma.phd" />
 
@@ -55,7 +59,11 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/"></a>
+      <a class="brand" href="/">juanma.phd</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -76,6 +84,7 @@
         <div class="hero-copy">
           <h1 class="name">Juan Manuel Contreras, Ph.D.</h1>
           <p class="tagline">Researcher building methodology, benchmarks, and infrastructure for evaluating large language models and multimodal AI.</p>
+          <p class="hero-creds">Co-founder &amp; CEO of <a href="https://aymara.ai" target="_blank" rel="noopener">Aymara</a><span class="sep">·</span>Ph.D., Harvard<span class="sep">·</span>ex-Uber Applied Science</p>
           <div class="social">
             <a class="icon" href="https://linkedin.com/in/jmcontreras" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="/assets/img/linkedin.svg" alt="LinkedIn"></a>
             <a class="icon" href="https://github.com/jm-contreras" aria-label="GitHub" target="_blank" rel="noopener"><img src="/assets/img/github.svg" alt="GitHub"></a>
@@ -85,10 +94,13 @@
         </div>
 
         <div class="hero-photo">
-          <img alt="Juan Manuel Contreras" src="/assets/img/headshot-square.jpg" />
+          <img alt="Juan Manuel Contreras" src="/assets/img/headshot-square.jpg" width="400" height="400" />
         </div>
       </div>
-    </section> 
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+    </section>
 
     <section class="section" id="about">
       <div class="container">
