@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20260529" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260622" />
   <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}catch(e){}})();</script>
   <link rel="canonical" href="https://juanma.phd/writing/llm-self-reports-dont-predict-llm-behavior/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -60,7 +60,7 @@
         <p class="post-meta">April 24, 2026 · Essay</p>
       </header>
 
-      <p class="post-callout">Companion to <a href="https://juanma.phd/assets/pdf/llm-native-psychometric-instrument-does-not-predict-llm-behavior.pdf" target="_blank" rel="noopener"><em>An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models</em></a> (2026).</p>
+      <p class="post-callout">Companion to <a href="https://arxiv.org/abs/2606.09843" target="_blank" rel="noopener"><em>An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models</em></a> (2026).</p>
 
       <p>If you administer a personality test to an LLM, it will give you coherent, consistent answers. Another LLM will give you systematically different answers.</p>
 
@@ -138,16 +138,16 @@
 
       <p>I ran each prompt five times per model, yielding 2,500 behavioral samples. Then I had each sample rated on the five factor dimensions by two independent pipelines: 151 human raters from an online research platform, and a three-judge LLM ensemble (Claude Opus 4.6, GPT-5.4, Gemini 3.1 Pro).</p>
 
-      <p>Humans and LLM judges rated the responses equivalently, correlating with each other at r = .51. Neither correlated with the models' self-report.</p>
+      <p>Humans and LLM judges rated the responses equivalently, correlating with each other at r = .51. Neither closely tracked the models' self-report.</p>
 
-      <p>The average correlation between instrument scores and human ratings was r = −.01. Not a single factor-level correlation was reliably different from zero. LLMs describe themselves consistently on this instrument, and that self-description has nothing to do with how they actually behave. The gap isn't a problem with the test. It's a property of LLM self-report itself.</p>
+      <p>The average correlation between instrument scores and human ratings was r = +.15, and not a single factor-level correlation was reliably different from zero. The two largest associations fell on the most behaviorally countable factors—Verbosity (r = .41) and Guardedness (r = .27)—but only Verbosity survived the stricter prompt-level and clustering checks; the evaluative factors sat near zero. LLMs describe themselves consistently on this instrument, and outside of sheer verbosity that self-description barely tracks how they actually behave. The gap isn't a problem with the test. It's a property of LLM self-report itself.</p>
 
       <figure class="post-figure">
-        <img src="/assets/img/posts/llm-self-reports/figure_2.png" alt="Scatter plots showing near-zero correlations between LLM self-report scores and human behavioral ratings across all five factors.">
+        <img src="/assets/img/posts/llm-self-reports/figure_2.png" alt="Plot showing near-zero correlations between LLM self-report scores and human behavioral ratings across all five factors.">
         <figcaption>Self-report scores plotted against human ratings of behavior, factor by factor. None of the relationships are reliably different from zero.</figcaption>
       </figure>
 
-      <p>This answers the question we started with. Both readings of the prior failures are partly wrong. LLMs do produce stable, structured self-description — that wasn't a guarantee, and it took an LLM-native instrument to see it. But the structure isn't tracking behavior. Self-report is its own thing.</p>
+      <p>This answers the question we started with. Both readings of the prior failures are partly wrong. LLMs do produce stable, structured self-description — that wasn't a guarantee, and it took an LLM-native instrument to see it. But the structure mostly isn't tracking behavior; only verbosity shows even a preliminary signal. Self-report is largely its own thing.</p>
 
       <h2>What the gap looks like in practice</h2>
 
@@ -181,7 +181,7 @@
       <p>The more unsettling result came from looking at all three measurement methods at once. On Responsiveness—the broadest factor, the one closest to "good assistant"‚the self-report correlated strongly with the LLM judges (r = .53) but not with humans (r = .04). And humans and judges otherwise agreed with each other on the samples (r = .59).</p>
 
       <figure class="post-figure">
-        <img src="/assets/img/posts/llm-self-reports/responsiveness_triangle.svg" alt="Triangle diagram of the three pairwise correlations on Responsiveness: self-report and LLM judges agree at r=0.53, judges and humans agree at r=0.59, but self-report and humans don't (r=0.04).">
+        <img class="figure-light" src="/assets/img/posts/llm-self-reports/responsiveness_triangle.svg" alt="Triangle diagram of the three pairwise correlations on Responsiveness: self-report and LLM judges agree at r=0.53, judges and humans agree at r=0.59, but self-report and humans don't (r=0.04).">
       </figure>
 
       <p>This triangle is mathematically incompatible with a single personality construct driving all three measurements. If one underlying "responsiveness" trait were driving self-report, human ratings, and judge ratings in parallel, the three correlations would be linked.</p>
@@ -213,9 +213,9 @@
       <p>The full instrument (100 retained items with scoring), raw response data, analysis code, and study materials are released openly. If you work on LLM evaluation, alignment, or AI psychometrics and want to build (or push back!) on this, the materials are there.</p>
 
       <p class="post-resources">
-        <a href="https://juanma.phd/assets/pdf/llm-native-psychometric-instrument-does-not-predict-llm-behavior.pdf" target="_blank" rel="noopener"><strong>Paper</strong></a> ·
-        <a href="https://github.com/jm-contreras/psycho-llm" target="_blank" rel="noopener"><strong>Code</strong> on GitHub</a> ·
-        <a href="https://osf.io/8y7ka/overview" target="_blank" rel="noopener"><strong>Data and preregistration</strong> on OSF</a>
+        <a href="https://arxiv.org/abs/2606.09843" target="_blank" rel="noopener"><strong>Paper</strong> on arXiv</a> ·
+        <a href="https://github.com/jm-contreras/psycho-llm" target="_blank" rel="noopener"><strong>Instrument</strong> on GitHub</a> ·
+        <a href="https://gist.science/paper/2606.09843" target="_blank" rel="noopener"><strong>Summary</strong> on gist.science</a>
       </p>
     </article>
 
@@ -228,7 +228,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/site.js?v=20260529" defer></script>
+  <script src="/assets/js/site.js?v=20260622" defer></script>
   <script src="/assets/js/self-report-profiles.js" defer></script>
 </body>
 </html>

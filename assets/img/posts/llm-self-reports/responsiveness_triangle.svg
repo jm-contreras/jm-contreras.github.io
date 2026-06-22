@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 75 600 405" role="img" aria-labelledby="title desc">
   <title id="title">The Responsiveness measurement triangle</title>
   <desc id="desc">Three measurement methods — Instrument, LLM Judges, and Humans — connected by their pairwise correlations. Instrument and Judges correlate at r=0.53. Judges and Humans correlate at r=0.59. Instrument and Humans correlate at r=0.04, near zero.</desc>
 
