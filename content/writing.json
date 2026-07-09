@@ -63,9 +63,9 @@
   ],
   "local_posts": [
     {
-      "slug": "llm-self-reports-dont-predict-llm-behavior",
+      "slug": "llm-self-report-behavior-gap",
       "title": "The LLM Self-Report–Behavior Gap",
-      "url": "/writing/llm-self-reports-dont-predict-llm-behavior/",
+      "url": "/writing/llm-self-report-behavior-gap/",
       "date": "2026-04-24",
       "tags": [
         "Essay"
